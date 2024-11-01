@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Reset some default styles */
 * {
     margin: 0;
@@ -7,49 +5,70 @@
     box-sizing: border-box;
 }
 
-/* Set the cute and bubbly font */
+/* Cute and bubbly font for the whole page */
 body {
     font-family: 'Baloo 2', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f7e8e1;
+    background: linear-gradient(135deg, #f7e8e1, #f5c7c7);
 }
 
-/* Center content on the page */
+/* Center and style container */
 .container {
     text-align: center;
     max-width: 450px;
     padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Header style */
 h1 {
     font-size: 2em;
     color: #d18b8b;
+    margin-bottom: 15px;
 }
 
+/* Subtitle */
 p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #555;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease;
 }
 
-/* Style for the box container */
+/* Tap-to-reveal text visibility toggle */
+#tapToReveal.hidden {
+    opacity: 0;
+}
+
+/* Box container style */
 .box-container {
     margin-top: 20px;
     position: relative;
 }
 
 .box {
-    width: 100%;
+    width: 80%;
     cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* Display area for the unboxed Labubu */
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Labubu display area style */
 .labubu-display img {
     max-width: 100%;
-    margin-top: 20px;
+    border-radius: 15px;
     animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Hidden class to hide elements */
@@ -57,25 +76,35 @@ p {
     display: none;
 }
 
-/* Style for the "Open Another?" button */
+/* Labubu name style */
+#labubuName {
+    font-size: 1.5em;
+    color: #d18b8b;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Open Another button style */
 button {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 10px 25px;
     font-size: 1.1em;
     font-weight: 500;
     cursor: pointer;
     border: none;
-    background-color: #d18b8b;
+    background: linear-gradient(135deg, #d18b8b, #b87272);
     color: white;
     border-radius: 20px;
-    transition: background-color 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #b87272;
+    transform: scale(1.05);
 }
 
-/* Simple fade-in animation */
+/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -84,24 +113,11 @@ button:hover {
 /* Cartoon-style quick multiple spins animation */
 @keyframes quickSpin3D {
     from { transform: rotateY(0deg); }
-    to { transform: rotateY(1440deg); } /* 4 full rotations (360 x 4) */
+    to { transform: rotateY(1440deg); }
 }
 
-/* Class to trigger the quick 3D multiple-spin animation */
+/* Quick spin class for 3D effect */
 .quick-spin-3d {
-    animation: quickSpin3D 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Fast and bouncy */
-    transform-style: preserve-3d; /* Enables 3D perspective */
-}
-
-#labubuName {
-    font-size: 1.5em;                
-    font-weight: 700;                
-    color: #d18b8b;                 
-    margin-bottom: 10px;                
-    transition: transform 0.3s;      
-}
-
-#labubuName:hover {
-    transform: scale(1.1);          
-    color: #d18b8b;                  
+    animation: quickSpin3D 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform-style: preserve-3d;
 }
