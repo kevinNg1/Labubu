@@ -66,6 +66,7 @@ p {
 /* Labubu display area style */
 .labubu-display img {
     max-width: 100%;
+    margin-top: 20px;
     border-radius: 15px;
     animation: fadeIn 0.5s ease-in-out;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
