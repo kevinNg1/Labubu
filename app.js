@@ -6,7 +6,6 @@ const labubuCharacters = [
     { name: 'Sesame Bean Labubu', image: 'assets/sesame.png', color: '#a29994' },
     { name: 'Soy Milk Labubu', image: 'assets/soymilk.png', color: '#dac2a7' },
     { name: 'Toffee Labubu', image: 'assets/toffee.png', color: '#c1a389' },
-    { name: 'Oh no you got a Lafufu', image: 'assets/Lafufu.png', color: 'red' },
 ];
 
 // Elements from the DOM
