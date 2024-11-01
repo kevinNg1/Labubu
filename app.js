@@ -1,25 +1,26 @@
 // List of Labubu character images, names, and colors
 const labubuCharacters = [
+    { name: 'Oh no you got a Lafufu', image: 'assets/Lafufu.png', color: 'red' },
     { name: 'Green Grape Labubu', image: 'assets/greengrape.png', color: '#a4a981' },
     { name: 'Lychee Berry Labubu', image: 'assets/lychee.png', color: '#d7909c' },
     { name: 'Sea Salt Coconut Labubu', image: 'assets/seasalt.png', color: '#838e98' },
     { name: 'Sesame Bean Labubu', image: 'assets/sesame.png', color: '#a29994' },
     { name: 'Soy Milk Labubu', image: 'assets/soymilk.png', color: '#dac2a7' },
     { name: 'Toffee Labubu', image: 'assets/toffee.png', color: '#c1a389' },
-    { name: 'Oh no you got a Lafufu', image: 'assets/Lafufu.png', color: 'red' },
 ];
 
 // Elements from the DOM
 const blindBox = document.getElementById('blindBox');
 const labubuDisplay = document.getElementById('labubuDisplay');
-const labubuName = document.getElementById('labubuName'); // New element for the Labubu name
+const labubuName = document.getElementById('labubuName');
 const openAnotherBtn = document.getElementById('openAnotherBtn');
-const tapToReveal = document.getElementById('tapToReveal'); // Paragraph element for tap-to-reveal text
+const tapToReveal = document.getElementById('tapToReveal');
 
-// Flag to prevent multiple clicks during the unboxing animation
+// Flags to prevent multiple clicks during the unboxing animation
 let isUnboxing = false;
+let firstUnbox = true; // Track if it's the first unboxing
 
-// Function to reveal a random Labubu character
+// Function to reveal a Labubu character
 function unboxLabubu() {
     if (isUnboxing) return;
 
@@ -29,9 +30,12 @@ function unboxLabubu() {
     // Add the quick-spin-3d class to trigger the fast cartoon-style spin animation
     blindBox.classList.add('quick-spin-3d');
 
-    // Randomly select a Labubu character
-    const randomIndex = Math.floor(Math.random() * labubuCharacters.length);
-    const selectedLabubu = labubuCharacters[randomIndex];
+    // Select Lafufu if it's the first unbox, otherwise pick a random Labubu
+    const selectedLabubu = firstUnbox
+        ? labubuCharacters[0] // Lafufu for the first unbox
+        : labubuCharacters[Math.floor(Math.random() * labubuCharacters.length)]; // Random selection, including Lafufu
+
+    firstUnbox = false; // Set to false after the first unbox
 
     // Display the selected Labubu after the spin animation
     setTimeout(() => {
