@@ -1,11 +1,15 @@
-/* Reset some default styles */
+/* Force the color scheme to be light, ignoring dark mode */
+:root {
+    color-scheme: light;
+}
+
+/* Page Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cute and bubbly font for the whole page */
 body {
     font-family: 'Baloo 2', sans-serif;
     display: flex;
@@ -15,15 +19,13 @@ body {
     background: linear-gradient(135deg, #f7e8e1, #f5c7c7);
 }
 
-/* Center and style container */
 .container {
     text-align: center;
     max-width: 450px;
-    padding: 15px;
+    padding: 20px;
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    margin: 20px;
 }
 
 h1 {
@@ -32,20 +34,16 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* Subtitle */
 p {
     font-size: 1.2em;
     color: #555;
     margin-bottom: 15px;
-    transition: opacity 0.3s ease;
 }
 
-/* Tap-to-reveal text visibility toggle */
 #tapToReveal.hidden {
     opacity: 0;
 }
 
-/* Box container style */
 .box-container {
     margin-top: 20px;
     position: relative;
@@ -63,21 +61,17 @@ p {
     transform: scale(1.05);
 }
 
-/* Labubu display area style */
 .labubu-display img {
     max-width: 100%;
-    margin-top: 20px;
     border-radius: 15px;
     animation: fadeIn 0.5s ease-in-out;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Hidden class to hide elements */
 .hidden {
     display: none;
 }
 
-/* Labubu name style */
 #labubuName {
     font-size: 1.5em;
     color: #d18b8b;
@@ -85,7 +79,6 @@ p {
     font-weight: bold;
 }
 
-/* Open Another button style */
 button {
     margin-top: 20px;
     padding: 10px 25px;
@@ -105,19 +98,16 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Cartoon-style quick multiple spins animation */
 @keyframes quickSpin3D {
     from { transform: rotateY(0deg); }
     to { transform: rotateY(1440deg); }
 }
 
-/* Quick spin class for 3D effect */
 .quick-spin-3d {
     animation: quickSpin3D 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     transform-style: preserve-3d;
