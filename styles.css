@@ -92,3 +92,16 @@ button:hover {
     animation: quickSpin3D 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Fast and bouncy */
     transform-style: preserve-3d; /* Enables 3D perspective */
 }
+
+#labubuName {
+    font-size: 1.5em;                
+    font-weight: 700;                
+    color: #d18b8b;                 
+    margin-bottom: 10px;                
+    transition: transform 0.3s;      
+}
+
+#labubuName:hover {
+    transform: scale(1.1);          
+    color: #d18b8b;                  
+}
